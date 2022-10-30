@@ -29,6 +29,8 @@ A JS Library For HTML Table Element.
     </table>
     <script>
         const myTable = document.getElementById("myTable");
+        
+        // initailize jatatable!
         jatatable(myTable, {});
     </script>
 </body>
