@@ -31,7 +31,9 @@ A JS Library For HTML Table Element.
         const myTable = document.getElementById("myTable");
         
         // initailize jatatable!
-        jatatable(myTable, {});
+        jatatable(myTable, {
+            autoColumnWidth : true, //set column width according to each header's text width
+        });
     </script>
 </body>
 </html>
