@@ -41,7 +41,7 @@ A JS Library For HTML Table Element.
 
 ## Devlog
 2022.10.30
-1. Table Headers can be resized.
+1. Table columns can be resized by dragging the right edge of each column header.
 
 ## Demo
 https://bbljjatatable.azurewebsites.net/
