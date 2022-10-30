@@ -1,2 +1,2 @@
 # Jatatable
-A Html Table Extension JS Library
+A JS Library For HTML Table Element.
