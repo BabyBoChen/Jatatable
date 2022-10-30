@@ -1,0 +1,31 @@
+:root {
+	--jatatable-default-column-width: 100px;
+}
+
+table.jatatable, table.jatatable th, table.jatatable td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	table-layout: fixed;
+}
+table.jatatable{
+	display:inline-block;
+	width:max-content;
+	word-wrap: break-word;
+}
+th {
+	min-width: 20px;
+	position: relative;
+	width:var(--jatatable-default-column-width);
+}
+.resizer {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 10px;
+	cursor: col-resize;
+	user-select: none;
+	height:100%;
+}
+.resizer-last{
+	width: 20px;	
+}
