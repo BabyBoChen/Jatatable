@@ -38,3 +38,6 @@ A JS Library For HTML Table Element.
 ## Devlog
 2022.10.30
 1. Table Headers can be resided.
+
+## Demo
+https://bbljjatatable.azurewebsites.net/
