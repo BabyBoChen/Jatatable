@@ -8,7 +8,6 @@ A JS Library For HTML Table Element.
     <link href="jatatable/jatatable.css" rel="stylesheet" type="text/css">
     <script src="jatatable/jatatable.js"></script>
 </head>
-...
 <body>
     <table id="myTable">
         <thead>
