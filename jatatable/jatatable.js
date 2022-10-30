@@ -8,6 +8,9 @@
 	for(let i = 0; i < colHeaders.length; i++){
 		let colHeader = colHeaders[i];
 		colHeader.style.position = "relative";
+		if(settings.autoColumnWidth){
+			autoColumnWidth(colHeader);
+		}
 		let resizer = document.createElement("div");
 		resizer.classList.add("resizer");
 		let isLastCol = false;
@@ -47,6 +50,31 @@
 	tb.addEventListener("mouseleave", function(e){
 		resizerMouseLeave(tb,e);
 	});
+}
+/**
+ * @param {HTMLTableCellElement} th
+ */
+function autoColumnWidth(th){
+	let textWidth = calcTextWidth(th.innerText, th);
+	th.style.width = (textWidth) + "px";
+}
+/**
+ * @param {String} text
+ * @param {HTMLTableCellElement} parentElement
+ * @returns {Number}
+ */
+function calcTextWidth(text, parentElement){
+	let span = document.createElement("span");
+	span.innerHTML = text;
+	span.style.position = "absolute";
+	span.style.visibility = "hidden";
+	span.style.height = "auto";
+	span.style.width = "auto";
+	span.style.whiteSpace = "nowrap";
+	parentElement.append(span);
+	let textWidth = span.clientWidth;
+	span.remove();
+	return textWidth;
 }
 /**
  * @param {HTMLTableElement} tb

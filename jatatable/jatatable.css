@@ -10,7 +10,6 @@ table.jatatable, table.jatatable th, table.jatatable td {
 table.jatatable{
 	display:inline-block;
 	width:max-content;
-	word-wrap: break-word;
 }
 th {
 	min-width: 20px;
