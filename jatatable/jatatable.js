@@ -45,7 +45,7 @@
  * @param {HTMLTableCellElement} th
  */
 function autoColumnWidth(th){
-	let textWidth = calcTextWidth(th.innerText, th);
+	let textWidth = calcTextWidth(th.innerText, th.parentElement);
 	th.style.width = (textWidth) + "px";
 }
 /**
