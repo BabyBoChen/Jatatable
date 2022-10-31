@@ -1,17 +1,16 @@
 :root {
 	--jatatable-default-column-width: 100px;
 }
-
+table.jatatable {
+	display:inline-block;
+	width:max-content;
+}
 table.jatatable, table.jatatable th, table.jatatable td {
 	border: 1px solid black;
 	border-collapse: collapse;
 	table-layout: fixed;
 }
-table.jatatable{
-	display:inline-block;
-	width:max-content;
-}
-th {
+table.jatatable th {
 	min-width: 20px;
 	position: relative;
 	width:var(--jatatable-default-column-width);

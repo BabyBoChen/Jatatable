@@ -4,35 +4,25 @@
  */
  function jatatable(tb, settings){
 	tb.classList.add("jatatable");
+	tb.jatatableSettings = settings;
 	let colHeaders = tb.querySelectorAll("th");
 	for(let i = 0; i < colHeaders.length; i++){
 		let colHeader = colHeaders[i];
-		colHeader.style.position = "relative";
+		colHeader.classList.add("jatatable-th");
 		if(settings.autoColumnWidth){
 			autoColumnWidth(colHeader);
 		}
 		let resizer = document.createElement("div");
 		resizer.classList.add("resizer");
-		let isLastCol = false;
 		if(i == colHeaders.length - 1){
-			isLastCol = true;
 			resizer.classList.add("resizer-last");
 		}
-		if(!isLastCol) {
-			resizer.addEventListener("mousedown", function(e){
-				resizerMouseDown(tb, resizer, e);
-			});
-			resizer.addEventListener("touchstart", function(e){
-				resizerTouchStart(tb, resizer, e);
-			});
-		} else {
-			resizer.addEventListener("mousedown", function(e){
-				lastResizerMouseDown(tb, resizer, e);
-			});
-			resizer.addEventListener("touchstart", function(e){
-				lastResizerTouchStart(tb, resizer, e);
-			});
-		}
+		resizer.addEventListener("mousedown", function(e){
+			resizerMouseDown(tb, resizer, e);
+		});
+		resizer.addEventListener("touchstart", function(e){
+			resizerTouchStart(tb, resizer, e);
+		});
 		colHeader.append(resizer);
 	}
 	tb.addEventListener("mousemove", function(e){
@@ -94,24 +84,6 @@ function resizerTouchStart(tb, s ,e){
 	tb.resizer = s;
 	tb.x0 = e.touches[0].screenX;
 }
-/**
- * @param {HTMLTableElement} tb
- * @param {HTMLDivElement} s
- * @param {MouseEvent} e
- */
-function lastResizerMouseDown(tb, s, e){
-	tb.resizer = s;
-	tb.x0 = e.screenX;
-}
-/**
- * @param {HTMLTableElement} tb
- * @param {HTMLDivElement} s
- * @param {TouchEvent} e
- */
-function lastResizerTouchStart(tb, s ,e){
-	tb.resizer = s;
-	tb.x0 = e.touches[0].screenX;
-}
 /** 
  * @param {HTMLTableElement} s
  * @param {MouseEvent} e
@@ -124,9 +96,6 @@ function resizerMouseMove(s, e){
 		let colWidth = parseInt(colStyle.width);
 		col.style.width = colWidth + deltaX + "px";
 		s.x0 = e.screenX;
-		if(deltaX > 0){
-			s.parentElement.scrollLeft += deltaX;	
-		}
 	}
 }
 /** 
@@ -164,6 +133,39 @@ function resizerTouchEnd(s, e){
  */
 function resizerMouseLeave(s, e){
 	s.resizer = null;
+}
+/** 
+ * @param {HTMLTableElement} s
+ * @param {String} header
+ * @returns {[HTMLTableRowElement]}
+ */
+function jatatableInsertColumn(s, header){
+	let thRow = s.querySelector("thead tr");
+	let th = document.createElement("th");
+	th.classList.add("jatatable-th");
+	th.innerText = header;
+	if(s.jatatableSettings.autoColumnWidth){
+		let textWidth = calcTextWidth(header, thRow);
+		th.style.width = (textWidth) + "px";
+	}
+	thRow.append(th);
+	document.querySelector(".resizer-last")?.classList.remove("resizer-last");
+	let resizer = document.createElement("div");
+	resizer.classList.add("resizer");
+	resizer.classList.add("resizer-last");
+	resizer.addEventListener("mousedown", function(e){
+		resizerMouseDown(s, resizer, e);
+	});
+	resizer.addEventListener("touchstart", function(e){
+		resizerTouchStart(s, resizer, e);
+	});
+	th.append(resizer);
+	let rows = s.querySelectorAll("tbody tr");
+	rows.forEach(function(row){
+		let td = document.createElement("td");
+		row.append(td);
+	});
+	return rows;
 }
 
 
