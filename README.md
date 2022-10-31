@@ -36,7 +36,7 @@ A JS Library For HTML Table Element.
         });
         
         // insert column
-        let rows = jatatableInsertColumn(myTable, "New Column Header"); //rows are all of the tr elements inside the tbody element;
+        let rows = jatatableInsertColumn(myTable, "New Column Header"); //this function returns all of the tr elements inside the tbody element;
     </script>
 </body>
 </html>
