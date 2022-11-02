@@ -45,15 +45,16 @@ A JS Library For HTML Table Element.
 ```
 
 ## Devlog
-2022.10.30
-1. Table columns can be resized by dragging the right edge of each column header.
-
-2022.10.31
-1. Add jatatableInsertColumn(HTMLTableElement tbElement, string headerText) function.
 
 2022.11.02
 1. Column Width can be smaller than its text when autoColumnWidth is set to false.
 2. Declare a const Jatatable variable holding all of its methods as its properties.
+
+2022.10.31
+1. Add jatatableInsertColumn(HTMLTableElement tbElement, string headerText) function.
+
+2022.10.30
+1. Table columns can be resized by dragging the right edge of each column header.
 
 ## Demo
 https://bbljjatatable.azurewebsites.net/
