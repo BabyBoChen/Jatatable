@@ -28,16 +28,16 @@ A JS Library For HTML Table Element.
        </tbody>
     </table>
     <script>
-		const myTable = document.getElementById("myTable");
-		  
-		// initailize jatatable!
-		Jatatable.init(myTable, {
-			autoColumnWidth : false,
-		});
-		   
-		// insert column
-		let rows = Jatatable.insertColumn(myTable, "New Column Header"); 
-		//rows refer to all of the tr elements inside the tbody element;
+	const myTable = document.getElementById("myTable");
+
+	// initailize jatatable!
+	Jatatable.init(myTable, {
+		autoColumnWidth : false,
+	});
+
+	// insert column
+	let rows = Jatatable.insertColumn(myTable, "New Column Header"); 
+	//rows refer to all of the tr elements inside the tbody element;
         
     </script>
 </body>
