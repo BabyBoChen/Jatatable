@@ -11,9 +11,17 @@ table.jatatable, table.jatatable th, table.jatatable td {
 	table-layout: fixed;
 }
 table.jatatable th {
-	min-width: 20px;
 	position: relative;
+	min-width: 20px;
+	max-width: var(--jatatable-default-column-width);
 	width:var(--jatatable-default-column-width);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.auto-column-width{
+	max-width: none !important;
+	white-space: nowrap;
 }
 .resizer {
 	position: absolute;
