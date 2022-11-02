@@ -48,7 +48,7 @@ A JS Library For HTML Table Element.
 ## Devlog
 
 2022.11.02
-1. Column Width can be smaller than its text when autoColumnWidth is set to false.
+1. Column width can be smaller than its header text when autoColumnWidth is set to false.
 2. Declare a const Jatatable variable holding all of its methods as its properties.
 
 2022.10.31
