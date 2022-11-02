@@ -5,41 +5,42 @@ A JS Library For HTML Table Element.
 ```
 <html>
 <head>
-    <link href="jatatable/jatatable.css" rel="stylesheet" type="text/css">
-    <script src="jatatable/jatatable.js"></script>
+	...
+	<link href="jatatable/jatatable.css" rel="stylesheet" type="text/css">
+	<script src="jatatable/jatatable.js"></script>
 </head>
 <body>
-    <table id="myTable">
-        <thead>
-            <tr>
-                <th>A</th>
-                <th>B</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>2</td>
-            </tr>
-       </tbody>
-    </table>
-    <script>
-	const myTable = document.getElementById("myTable");
+	<table id="myTable">
+		<thead>
+			<tr>
+				<th>A</th>
+				<th>B</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2</td>
+			</tr>
+		</tbody>
+	</table>
+	<script>
+		const myTable = document.getElementById("myTable");
 
-	// initailize jatatable!
-	Jatatable.init(myTable, {
-		autoColumnWidth : false,
-	});
+		// initailize jatatable!
+		Jatatable.init(myTable, {
+			autoColumnWidth : false,
+		});
 
-	// insert column
-	let rows = Jatatable.insertColumn(myTable, "New Column Header"); 
-	//rows refer to all of the tr elements inside the tbody element;
-        
-    </script>
+		// insert column
+		let rows = Jatatable.insertColumn(myTable, "New Column Header"); 
+		//rows refer to all of the tr elements inside the tbody element;
+
+	</script>
 </body>
 </html>
 ```
