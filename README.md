@@ -28,15 +28,17 @@ A JS Library For HTML Table Element.
        </tbody>
     </table>
     <script>
-        const myTable = document.getElementById("myTable");
+		const myTable = document.getElementById("myTable");
+		  
+		// initailize jatatable!
+		Jatatable.init(myTable, {
+			autoColumnWidth : false,
+		});
+		   
+		// insert column
+		let rows = Jatatable.insertColumn(myTable, "New Column Header"); 
+		//rows refer to all of the tr elements inside the tbody element;
         
-        // initailize jatatable!
-        jatatable(myTable, {
-            autoColumnWidth : true, //set column width according to each header's text width; if false, column width is default to 100px;
-        });
-        
-        // insert column
-        let rows = jatatableInsertColumn(myTable, "New Column Header"); //this function returns all of the tr elements inside the tbody element;
     </script>
 </body>
 </html>
@@ -48,6 +50,10 @@ A JS Library For HTML Table Element.
 
 2022.10.31
 1. Add jatatableInsertColumn(HTMLTableElement tbElement, string headerText) function.
+
+2022.11.02
+1. Column Width can be smaller than its text when autoColumnWidth is set to false.
+2. Declare a const Jatatable variable holding all of its methods as its properties.
 
 ## Demo
 https://bbljjatatable.azurewebsites.net/
