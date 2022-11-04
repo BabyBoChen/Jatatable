@@ -9,17 +9,20 @@ table.jatatable, table.jatatable th, table.jatatable td {
 	border: 1px solid black;
 	border-collapse: collapse;
 	table-layout: fixed;
-}
-table.jatatable th {
-	position: relative;
-	min-width: 20px;
-	max-width: var(--jatatable-default-column-width);
-	width:var(--jatatable-default-column-width);
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-.auto-column-width{
+table.jatatable th {
+	position: relative;
+	min-width: 30px;
+	max-width: var(--jatatable-default-column-width);
+	width:var(--jatatable-default-column-width);
+}
+table.jatatable td {
+	max-width: 0px;
+}
+.auto-column-width {
 	max-width: none !important;
 	white-space: nowrap;
 }
@@ -32,6 +35,6 @@ table.jatatable th {
 	user-select: none;
 	height:100%;
 }
-.resizer-last{
-	width: 20px;	
+.resizer-last {
+	width: 30px;	
 }
