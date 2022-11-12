@@ -51,7 +51,7 @@ A JS Library For HTML Table Element.
 ## Devlog
 
 2022.11.13
-1. Add "unbound" class to th elements can prevent those columns from being unintended auto-sized.
+1. Add "unbound" class to th elements can prevent those columns from being auto-sized.
 
 2022.11.02
 1. Column width can be smaller than its header text when autoColumnWidth is set to false.
