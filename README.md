@@ -13,16 +13,19 @@ A JS Library For HTML Table Element.
 	<table id="myTable">
 		<thead>
 			<tr>
+				<th class="unbound"></th>
 				<th>A</th>
 				<th>B</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
+				<td><button>Edit</button></td>
 				<td>1</td>
 				<td>1</td>
 			</tr>
 			<tr>
+				<td><button>Edit</button></td>
 				<td>2</td>
 				<td>2</td>
 			</tr>
@@ -33,7 +36,7 @@ A JS Library For HTML Table Element.
 
 		// initailize jatatable!
 		Jatatable.init(myTable, {
-			autoColumnWidth : false,
+			autoColumnWidth : true,
 		});
 
 		// insert column
@@ -46,6 +49,9 @@ A JS Library For HTML Table Element.
 ```
 
 ## Devlog
+
+2022.11.13
+1. Add "unbound" class to th elements can prevent those columns from being unintended auto-sized.
 
 2022.11.02
 1. Column width can be smaller than its header text when autoColumnWidth is set to false.
