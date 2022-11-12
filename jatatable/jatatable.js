@@ -14,7 +14,9 @@ const Jatatable = {
 			colHeader.classList.add("jatatable-th");
 			if(settings.autoColumnWidth){
 				colHeader.classList.add("auto-column-width");
-				Jatatable._autoColumnWidth(colHeader);
+				if (!colHeader.classList.contains("unbound")) {
+					Jatatable._autoColumnWidth(colHeader);
+				}
 			}
 			let resizer = document.createElement("div");
 			resizer.classList.add("resizer");

@@ -19,14 +19,14 @@ table.jatatable th {
 	max-width: var(--jatatable-default-column-width);
 	width:var(--jatatable-default-column-width);
 }
-table.jatatable td {
-	max-width: 0px;
-}
-.auto-column-width {
+table.jatatable th.auto-column-width {
 	max-width: none !important;
 	white-space: nowrap;
 }
-.resizer {
+table.jatatable th.unbound {
+	max-width:none;
+}
+table.jatatable .resizer {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -35,6 +35,9 @@ table.jatatable td {
 	user-select: none;
 	height:100%;
 }
-.resizer-last {
+table.jatatable .resizer-last {
 	width: 30px;	
+}
+table.jatatable td {
+	max-width: 0px;
 }
