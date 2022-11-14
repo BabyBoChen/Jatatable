@@ -42,6 +42,9 @@ A JS Library For HTML Table Element.
 		// insert column
 		let rows = Jatatable.insertColumn(myTable, "New Column Header"); 
 		//rows refer to all of the tr elements inside the tbody element;
+		
+		// delete column
+		Jatatable.deleteColumn(myTable, 1);
 
 	</script>
 </body>
@@ -49,6 +52,9 @@ A JS Library For HTML Table Element.
 ```
 
 ## Devlog
+
+2022.11.14
+1. Add Jatatable.deleteColumn(HTMLTableElement tbElement, Number columnIndex) function.
 
 2022.11.13
 1. Add "unbound" class to th elements can prevent those columns from being auto-sized.
@@ -58,7 +64,7 @@ A JS Library For HTML Table Element.
 2. Declare a const Jatatable variable holding all of its methods as its properties.
 
 2022.10.31
-1. Add jatatableInsertColumn(HTMLTableElement tbElement, string headerText) function.
+1. Add Jatatable.insertColumn(HTMLTableElement tbElement, string headerText) function.
 
 2022.10.30
 1. Table columns can be resized by dragging the right edge of each column header.
