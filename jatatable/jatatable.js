@@ -192,5 +192,18 @@ const Jatatable = {
 			row.append(td);
 		});
 		return rows;
+	},
+	
+	/** @param {HTMLTableElement} s
+	 * @param {Number} colIndex 
+	*/
+	deleteColumn : function(s, colIndex){
+		let cols = s.querySelectorAll("th");
+		cols[colIndex].remove();
+		let rows = s.querySelectorAll("tbody tr");
+		rows.forEach(function(row){
+			let cells = row.querySelectorAll("td");
+			cells[colIndex].remove();
+		});
 	}
 };
