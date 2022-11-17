@@ -8,6 +8,10 @@ const Jatatable = {
 		tb.classList.add("jatatable");
 		tb.jatatableSettings = settings;
 		
+		if(!settings.autoColumnWidth){
+			Jatatable._setJatatableDefaultColumnWidth(tb.jatatableSettings.defaultColumnWidth);
+		}
+		
 		let colHeaders = tb.querySelectorAll("th");
 		for(let i = 0; i < colHeaders.length; i++){
 			let colHeader = colHeaders[i];
@@ -47,6 +51,17 @@ const Jatatable = {
 		tb.addEventListener("mouseleave", function(e){
 			Jatatable._resizerMouseLeave(tb,e);
 		});
+	},
+	
+	/**
+	 * @param {Number} defaultColumnWidth
+	 */
+	_setJatatableDefaultColumnWidth(defaultColumnWidth){
+		if(!defaultColumnWidth){
+			defaultColumnWidth = 100;
+		}
+		let root = document.querySelector(':root');
+		root.style.setProperty('--jatatable-default-column-width', `${defaultColumnWidth}px`);
 	},
 	
 	/**

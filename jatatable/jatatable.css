@@ -16,17 +16,16 @@ table.jatatable, table.jatatable th, table.jatatable td {
 table.jatatable th {
 	position: relative;
 	min-width: 30px;
-	max-width: var(--jatatable-default-column-width);
-	width:var(--jatatable-default-column-width);
 }
-table.jatatable th.auto-column-width {
+table.jatatable th:not(.unbound) {
+	width:var(--jatatable-default-column-width);
+	max-width: var(--jatatable-default-column-width);
+}
+.auto-column-width {
 	max-width: none !important;
 	white-space: nowrap;
 }
-table.jatatable th.unbound {
-	max-width:none;
-}
-table.jatatable .resizer {
+.resizer {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -35,7 +34,7 @@ table.jatatable .resizer {
 	user-select: none;
 	height:100%;
 }
-table.jatatable .resizer-last {
+.resizer-last {
 	width: 30px;	
 }
 table.jatatable td {
