@@ -17,13 +17,9 @@ table.jatatable th {
 	position: relative;
 	min-width: 30px;
 }
-table.jatatable th:not(.unbound) {
+table.jatatable th:not(.unbound):not(.auto-column-width)  {
 	width:var(--jatatable-default-column-width);
 	max-width: var(--jatatable-default-column-width);
-}
-.auto-column-width {
-	max-width: none !important;
-	white-space: nowrap;
 }
 .resizer {
 	position: absolute;
