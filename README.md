@@ -13,7 +13,7 @@ A JS Library For HTML Table Element.
 	<table id="myTable">
 		<thead>
 			<tr>
-				<th class="unbound"></th>
+				<th class="unbound" style="width:3rem;"></th>
 				<th>A</th>
 				<th>B</th>
 			</tr>
@@ -36,7 +36,8 @@ A JS Library For HTML Table Element.
 
 		// initailize jatatable!
 		Jatatable.init(myTable, {
-			autoColumnWidth : true,
+			autoColumnWidth : false,  // default is false
+			defaultColumnWidth: 125,  // in effect if autoColumnWidth is set to false
 		});
 
 		// insert column
@@ -52,6 +53,9 @@ A JS Library For HTML Table Element.
 ```
 
 ## Devlog
+
+2022.11.17
+1. Add 'defaultColumnWidth' property (Number) into init settings. Default value is 100.
 
 2022.11.14
 1. Add Jatatable.deleteColumn(HTMLTableElement tbElement, Number columnIndex) function.
